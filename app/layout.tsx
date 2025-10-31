@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
@@ -16,7 +16,9 @@ export default function RootLayout({
       <body>
         <main className="min-h-screen flex items-center justify-center py-12">
           <div className="container-max w-full">
-            <Providers>{children}</Providers>
+            <Providers>
+              <Suspense>{children}</Suspense>
+            </Providers>
           </div>
         </main>
       </body>
