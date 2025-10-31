@@ -28,12 +28,14 @@ This app fetches quiz questions from the backend, supports multiple question typ
 
 ## App Router Structure:
 
-/app \
-├── layout.tsx # Root layout, imports globals.css \
-├── page.tsx # Landing page \
-├── quiz/page.tsx # Quiz page \
-├── result/page.tsx # Quiz result page \
+```
+/app
+├── layout.tsx # Root layout, imports globals.css
+├── page.tsx # Landing page
+├── quiz/page.tsx # Quiz page
+├── result/page.tsx # Quiz result page
 /components/ # Button, Timer, etc.
+```
 
 ---
 
