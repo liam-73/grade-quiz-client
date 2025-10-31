@@ -1,5 +1,5 @@
 'use client';
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useQuizState } from '@/hooks/useQuizState';
 import { Timer } from '@/components/shared/timer';
 import { Button } from '@/components/shared/button';
@@ -17,6 +17,12 @@ export default function QuizPage() {
 
   const questions = data?.questions || [];
   const total = questions.length;
+
+  useEffect(() => {
+  if (data?.questions?.length && data?.questions?.length > 0 && !state.startedAt) {
+    dispatch({ type: 'START' });
+  }
+}, [data?.questions, state.startedAt, dispatch]);
 
   const progress = useMemo(() => {
     const answered = Object.keys(state.answers).length;
